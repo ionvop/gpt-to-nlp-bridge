@@ -120,7 +120,7 @@ The data is converted to be returned to the user in OpenAI response format which
 
 1. **Null Values in Properties:**
     - The properties `completion_tokens`, `prompt_tokens`, `total_tokens`, `logprobs`, and `system_fingerprint` will always be null. This is because the NLP Cloud API does not return any values for these properties.
-    - The absence of these values is due to the fact that the NLP Cloud API does not support features such as displaying log probabilities or providing token counts related to completion or prompt tokens.
+    - This is due to the fact that the NLP Cloud Chatbot API does not support features such as displaying log probabilities or providing token counts related to completion or prompt tokens.
 
 2. **Single Element in Choices:**
     - The `choices` property will always contain a single element in the response. This is a result of the NLP Cloud API not having a parameter analogous to OpenAI's `n` parameter.
