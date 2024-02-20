@@ -61,8 +61,6 @@ foreach ($_POST["messages"] as $key => $value) {
             $previousRole = "assistant";
             break;
         default:
-            http_response_code(400);
-
             $result = [
                 "error" => [
                     "code" => "invalid_role",
@@ -90,8 +88,6 @@ $res = SendCurl("https://api.nlpcloud.io/v1/gpu/" . $_POST["model"] . "/chatbot"
 $res = json_decode($res, true);
 
 if ($res == null) {
-    http_response_code(400);
-
     $result = [
         "error" => [
             "code" => "unknown_error",
@@ -141,7 +137,6 @@ $log = [
 ];
 
 LogData(json_encode($log));
-
 exit(json_encode($result));
 
 function SendCurl($url, $method, $headers, $data) {
