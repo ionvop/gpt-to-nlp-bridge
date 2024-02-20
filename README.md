@@ -127,4 +127,4 @@ The data is converted to be returned to the user in OpenAI response format which
     - OpenAI's `n` parameter controls the number of chat completion choices to generate for each input message. However, the NLP Cloud API does not offer a similar parameter, thus restricting the number of choices to one per message.
   
 3. **Limited Request Data Parsing:**
-    - The program will only read the properties `model` and `messages` from the request data. Any additional properties or nested structures in the request data will be ignored by the API.
+    - The program will only read the properties `model` and `messages` from the request data. Any additional properties or nested structures in the request data will be ignored.
