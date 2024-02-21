@@ -131,7 +131,7 @@ The data is converted to be returned to the user in OpenAI response format which
 
 ## Use cases
 
-This program can be used as an OpenAI reverse proxy for AI character chatting web interfaces such as [VenusAI](https://www.venuschat.ai/) and [JanitorAI](https://janitorai.com/) if you prefer using a model that has lesser to no guardrails and is almost completely uncensored for all you degenerates out there.
+This program can be used as an OpenAI reverse proxy for AI character chatting web interfaces such as [VenusAI](https://www.venuschat.ai/) and [JanitorAI](https://janitorai.com/) when preferring a model that has lesser to no guardrails and is almost completely uncensored for all you degenerates out there.
 
 ### Guide
 
