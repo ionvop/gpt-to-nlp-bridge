@@ -1,9 +1,9 @@
 # gpt-to-nlp-bridge
-Use OpenAI's request format for communicating with NLP Cloud's chatbot API
+Use OpenAI's request format for communicating with NLP Cloud's chatbot API.
 
 The program is designed to be integrated into systems where there's a need to interface with NLP Cloud's API while maintaining compatibility with existing OpenAI-based user interfaces.
 
-## Example Usage
+## Example usage
 
 ```bat
 curl http://localhost:8000/v1/chat/completions/ \
@@ -128,3 +128,33 @@ The data is converted to be returned to the user in OpenAI response format which
   
 3. **Limited Request Data Parsing:**
     - The program will only read the properties `model` and `messages` from the request data. Any additional properties or nested structures in the request data will be ignored.
+
+## Use cases
+
+This program can be used as an OpenAI reverse proxy for AI character chatting web interfaces such as [JanitorAI](https://janitorai.com/) and [VenusAI](https://www.venuschat.ai/) for all you degenerates out there.
+
+### Guide
+
+1. Deploy this repo into your local PHP server.
+
+2. Open the API settings of your web interface.
+
+3. Set the AI Model to `OpenAI`.
+
+4. Set the OpenAI Model to `gpt-3.5-turbo`.
+
+    - If the `model` property of the request data uses `gpt-3.5-turbo`, it will automatically use the `chatdolphin` model instead.
+
+5. Set the Access OpenAI API to `Reverse Proxy`.
+
+6. Set the OpenAI Reverse Proxy to the url of your local endpoint.
+
+    - It's uually `http://localhost:8000/v1`
+
+7. Set the Reverse Proxy Key to your NLP Cloud API Token.
+
+    - If you don't have an API Token yet, you can obtain one [here](https://nlpcloud.com/home/token).
+
+8. Click Check Proxy to see if it's working.
+
+    - If it works, you can now start chatting.
