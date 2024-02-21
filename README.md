@@ -143,13 +143,13 @@ This program can be used as an OpenAI reverse proxy for AI character chatting we
 
 4. Set the OpenAI Model to `gpt-3.5-turbo`.
 
-    - If the `model` property of the request data uses `gpt-3.5-turbo`, it will automatically use the `chatdolphin` model instead.
+    - If the `model` property of the request data uses `gpt-3.5-turbo`, it will automatically switch to the `chatdolphin` model instead.
 
 5. Set the Access OpenAI API to `Reverse Proxy`.
 
 6. Set the OpenAI Reverse Proxy to the url of your local endpoint.
 
-    - It's uually `http://localhost:8000/v1`
+    - It's usually `http://localhost:8000/v1`
 
 7. Set the Reverse Proxy Key to your NLP Cloud API Token.
 
