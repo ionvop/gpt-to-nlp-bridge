@@ -135,7 +135,7 @@ This program can be used as an OpenAI reverse proxy for AI character chatting we
 
 ### Guide
 
-1. Deploy this repo into your local PHP server.
+1. Deploy this repo into a local PHP server.
 
 2. Open the API settings of your web interface.
 
