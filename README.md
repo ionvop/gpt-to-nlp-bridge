@@ -158,3 +158,51 @@ This program can be used as an OpenAI reverse proxy for AI character chatting we
 8. Click Check Proxy to see if it's working.
 
     - If it works, you can now start chatting.
+  
+# Endpoints
+
+## Chat
+
+Given a list of messages comprising a conversation, the model will return a response. See [OpenAI's documentation](https://platform.openai.com/docs/api-reference/chat) for more details.
+
+### Create chat completion
+
+**POST** `http://localhost:8000/v1/chat/completions`
+
+Creates a model response for the given chat conversation.
+
+#### Request body
+
+`messages` *array* - A list of messages comprising the conversation so far.
+
+`model` *string* - ID of the model to use.
+
+## Models
+
+List and describe the various models available in the API. See [OpenAI's documentation](https://platform.openai.com/docs/api-reference/models) for more details.
+
+### List models
+
+**GET** `http://localhost:8000/v1/models`
+
+Lists the currently available models, and provides basic information about each one.
+
+### Retrieve model
+
+**GET** `http://localhost:8000/v1/models/{model}`
+
+Retrieves a model instance, providing basic information about the model.
+
+#### Path parameters
+
+`model` *string* - The ID of the model to use for this request.
+
+# Changelog
+
+## 2023-02-22
+
+- The program now works on [Venus Chub AI](https://venus.chub.ai/) by adding the `v1/models` endpoint.
+
+## 2023-02-20
+
+- Released to Github.
