@@ -1,6 +1,5 @@
 <?php
 
-include("common.php");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 
@@ -158,6 +157,15 @@ function SendCurl($url, $method, $headers, $data) {
 
     curl_close($ch);
     return $result;
+}
+
+function LogData($input) {
+    if (file_exists("log") == false) {
+        mkdir("log");
+    }
+    
+    $date = date("Y-m-d H-i-s");
+    return file_put_contents("log/{$date}.json", $input);
 }
 
 ?>
