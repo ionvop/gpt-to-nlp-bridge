@@ -76,8 +76,7 @@ $reqData = [
     "history" => $history
 ];
 
-$reqData = json_encode($reqData);
-$res = SendCurl("https://api.nlpcloud.io/v1/gpu/" . $_POST["model"] . "/chatbot", "POST", $reqHeaders, $reqData);
+$res = SendCurl("https://api.nlpcloud.io/v1/gpu/" . $_POST["model"] . "/chatbot", "POST", $reqHeaders, json_encode($reqData));
 $res = json_decode($res, true);
 
 if ($res == null) {
@@ -125,9 +124,11 @@ $result = [
 
 $log = [
     "headers" => $headers,
+    "raw_body" => file_get_contents("php://input"),
     "request" => $_POST,
-    "response" => $result,
-    "raw_body" => file_get_contents("php://input")
+    "converted_request" => $reqData,
+    "response" => $res,
+    "converted_response" => $result
 ];
 
 LogData(json_encode($log));
